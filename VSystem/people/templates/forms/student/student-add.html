@@ -1,0 +1,47 @@
+{% extends "components/base-modal.html" %}
+
+{% block title %}Agregar Estudiante{% endblock %}
+{% block modal-id %}addForm{% endblock %}
+{% block form-label-title %}addForm{% endblock %}
+{% block modal-size %}modal-lg{% endblock %}
+
+{% block url-form %}{% url "add-student" %}{% endblock %}
+{% block id-form %}studentAddForm{% endblock %}
+
+{% block modal-body %}
+    <div class="row g-3 mb-3">
+        <div class="col-md-4">  
+            <label for="inputDocument" class="form-label">Documento</label>
+            {{studentAddForm.document}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputFirstName" class="form-label">Nombres</label>
+            {{studentAddForm.firstName}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputLastName" class="form-label">Apellidos</label>
+            {{studentAddForm.lastName}}
+        </div>
+    </div>
+    <div class="row g-3 mb-3">
+        <div class="col-md-4">
+            <label for="inputPhoneNumber" class="form-label">Telefono</label>
+            {{studentAddForm.phoneNumber}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputEmail" class="form-label">Correo Electronico</label>
+            {{studentAddForm.email}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputBirthDate" class="form-label">Fecha de Nacimiento</label>
+            {{studentAddForm.birthDate}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal-buttons %}
+    <button type="submit" class="btn btn-success" id="liveToastBtn">Guardar</button>
+    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+{% endblock %}
+
+

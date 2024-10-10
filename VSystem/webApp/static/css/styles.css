@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.table-container {
+    height: 78% !important;
+}
+
+.main-container {
+    height: 75% !important;
+}   
