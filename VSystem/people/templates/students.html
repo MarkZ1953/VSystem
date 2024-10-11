@@ -30,7 +30,7 @@
             <h1 class="text-white mx-5">Estudiantes</h1>
             <a class="btn btn-light mx-5"  data-bs-toggle="modal" data-bs-target="#addForm">Agregar</a>
         </div>
-        <div class="container overflow-auto border table-container">
+        <div class="container overflow-auto border table-container table-responsive">
             <table class="table table-bordered mt-3 table-sm">
                 <thead>
                     <th class="align-middle text-center">#</th>
@@ -65,12 +65,7 @@
 
     <script src="{% static "js/student/student-detail.js" %}" type="module"></script>
     <script src="{% static "js/student/student-add.js" %}" type="module"></script>
-
-    <script>
-        document.getElementById('liveToastBtn').addEventListener('click', function () {
-            var toastEl = document.getElementById('liveToast');
-            var toast = new bootstrap.Toast(toastEl, { autohide: true, delay: 3000 });
-            toast.show();
-        });
-    </script>
+    <script src="{% static "js/student/student-delete.js" %}" type="module"></script>
+    <script src="{% static "js/student/student-update.js" %}" type="module"></script>
+    
 {% endblock %}

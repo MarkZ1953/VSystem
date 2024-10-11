@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from webApp.views import IndexView
-from people.views import StudentsView, DetailStudentView, AddStudentView
+from people.views import StudentsView, DetailStudentView, AddStudentView, DeleteStudentView
  
 
 urlpatterns = [
@@ -26,4 +26,5 @@ urlpatterns = [
     path('students/', StudentsView.as_view(), name='students'),
     path('students/get-student/<int:pk>/', DetailStudentView.as_view(), name="detail-student"),
     path('students/add-student/', AddStudentView.as_view(), name="add-student"),
+    path('students/delete-student/<int:pk>/', DeleteStudentView.as_view(), name="delete-student"),
 ]

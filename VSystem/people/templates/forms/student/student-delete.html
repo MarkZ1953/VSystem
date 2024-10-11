@@ -1,14 +1,14 @@
 {% extends "components/base-modal.html" %}
 
 {% block title %}Eliminar Estudiante{% endblock %}
-{% block id-form %}deleteForm{% endblock %}
+{% block modal-id %}deleteForm{% endblock %}
 {% block form-label-title %}deleteForm{% endblock %}
 
 {% block modal-body %}
-    <p>¿Esta seguro que desea eliminar al estudiante Felipe Castro?</p>
+    <p class="student-text" id="student-text"></p>
 {% endblock %}
 
 {% block modal-buttons %}
-    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
-    <a type="button" class="btn btn-danger" data-bs-dismiss="modal" id="liveToastBtn">Eliminar</a>
+    <a class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+    <a class="btn btn-danger" data-bs-dismiss="modal" id="btnDeleteAccept">Eliminar</a>
 {% endblock %}

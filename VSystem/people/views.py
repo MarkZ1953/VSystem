@@ -55,4 +55,15 @@ class DetailStudentView(DetailView):
         }
 
         return JsonResponse({"success": True, "student": studentData})
+
+
+class DeleteStudentView(DeleteView):
+    model = Person
+
+    def post(self, request, *args, **kwargs):
+        student = self.get_object()
+        if student:
+            student.delete()
+            
+        return JsonResponse({"success": True, "message": f"Se ha eliminado correctamente a el/la estudiante {student.firstName} {student.lastName}"})
     
