@@ -1,4 +1,5 @@
-from django.forms import CharField, TextInput, Form, EmailField, EmailInput, DateField, DateInput
+from django.forms import CharField, TextInput, Form, EmailField, EmailInput, DateField, DateInput, ModelForm
+from .models import Person
 
 
 class StudentDetailForm(Form):
@@ -6,8 +7,8 @@ class StudentDetailForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "32",
-            "name": "inputFirstName",
-            "id": "inputFirstName",
+            "name": "inputFirstNameDetail",
+            "id": "inputFirstNameDetail",
             "readonly": True,
             "disabled": True
         }
@@ -17,8 +18,8 @@ class StudentDetailForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "32",
-            "name": "inputLastName",
-            "id": "inputLastName",
+            "name": "inputLastNameDetail",
+            "id": "inputLastNameDetail",
             "readonly": "True",
             "disabled": "True"
         }
@@ -28,8 +29,8 @@ class StudentDetailForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "16",
-            "name": "inputDocument",
-            "id": "inputDocument",
+            "name": "inputDocumentDetail",
+            "id": "inputDocumentDetail",
             "readonly": "True",
             "disabled": "True"
         }
@@ -39,8 +40,8 @@ class StudentDetailForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "16",
-            "name": "inputPhoneNumber",
-            "id": "inputPhoneNumber",
+            "name": "inputPhoneNumberDetail",
+            "id": "inputPhoneNumberDetail",
             "readonly": "True",
             "disabled": "True"
         }
@@ -50,8 +51,8 @@ class StudentDetailForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "128",
-            "name": "inputEmail",
-            "id": "inputEmail",
+            "name": "inputEmailDetail",
+            "id": "inputEmailDetail",
             "readonly": "True",
             "disabled": "True"
         }
@@ -61,8 +62,8 @@ class StudentDetailForm(Form):
         attrs={
             "class": "form-control",
             "type": "date",
-            "name": "inputBirthDate",
-            "id": "inputBirthDate",
+            "name": "inputBirthDateDetail",
+            "id": "inputBirthDateDetail",
             "readonly": "True",
             "disabled": "True"
         }
@@ -74,8 +75,8 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "32",
-            "name": "inputFirstName",
-            "id": "inputFirstName"
+            "name": "inputFirstNameAdd",
+            "id": "inputFirstNameAdd"
         }
     ))
 
@@ -83,8 +84,8 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "32",
-            "name": "inputLastName",
-            "id": "inputLastName"
+            "name": "inputLastNameAdd",
+            "id": "inputLastNameAdd"
         }
     ))
 
@@ -92,8 +93,61 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "16",
-            "name": "inputDocument",
-            "id": "inputDocument"
+            "name": "inputDocumentAdd",
+            "id": "inputDocumentAdd"
+        }
+    ))
+    
+    phoneNumber = CharField(widget=TextInput(        
+        attrs={
+            "class": "form-control",
+            "maxlength": "16",
+            "name": "inputPhoneNumberAdd",
+            "id": "inputPhoneNumberAdd"
+        }
+    ))
+
+    email = EmailField(widget=EmailInput(
+        attrs={
+            "class": "form-control",
+            "maxlength": "128",
+            "name": "inputEmailAdd",
+            "id": "inputEmailAdd"
+        }
+    ))
+
+    birthDate = DateField(widget=DateInput(
+        attrs={
+            "class": "form-control",
+            "type": "date",
+            "name": "inputBirthDateAdd",
+            "id": "inputBirthDateAdd"
+        }
+    ))
+    
+
+class StudentUpdateForm(ModelForm):
+    firstName = CharField(widget=TextInput(        
+        attrs={
+            "class": "form-control",
+            "maxlength": "32",
+            "id": "inputFirstNameUpdate"
+        }
+    ))
+
+    lastName = CharField(widget=TextInput(        
+        attrs={
+            "class": "form-control",
+            "maxlength": "32",
+            "id": "inputLastNameUpdate"
+        }
+    ))
+
+    document = CharField(widget=TextInput(        
+        attrs={
+            "class": "form-control",
+            "maxlength": "16",
+            "id": "inputDocumentUpdate"
         }
     ))
     
@@ -102,7 +156,7 @@ class StudentAddForm(Form):
             "class": "form-control",
             "maxlength": "16",
             "name": "inputPhoneNumber",
-            "id": "inputPhoneNumber"
+            "id": "inputPhoneNumberUpdate"
         }
     ))
 
@@ -110,8 +164,7 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "128",
-            "name": "inputEmail",
-            "id": "inputEmail"
+            "id": "inputEmailUpdate"
         }
     ))
 
@@ -119,10 +172,13 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "type": "date",
-            "name": "inputBirthDate",
-            "id": "inputBirthDate"
+            "id": "inputBirthDateUpdate"
         }
     ))
+
+    class Meta:
+        model = Person
+        fields = "__all__"
 
 
 class FormTeacher(Form):

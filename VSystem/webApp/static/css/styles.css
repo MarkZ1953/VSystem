@@ -4,10 +4,23 @@ html, body {
     padding: 0;
 }
 
-.table-container {
+/* .table-container {
     height: 78% !important;
 }
 
 .main-container {
     height: 75% !important;
-}   
+}    */
+
+
+/* Contenedor principal para ocupar toda la altura de la pantalla */
+.full-height {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+/* Contenedor de tabla ajustable */
+.table-container {
+  flex: 1;
+  overflow-y: auto;
+}

@@ -1,4 +1,6 @@
-import { showToast } from "../toast.js"
+import { showToast } from "../../toast.js"
+import { alertController } from "../../alert.js"
+import { updateStudentTable } from "../components/student-table.js"
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -21,8 +23,19 @@ document.addEventListener("DOMContentLoaded", function() {
                     var myModalElement = document.getElementById('addForm')
                     var modal = bootstrap.Modal.getInstance(myModalElement)
                     modal.hide()
+                    updateStudentTable()    
                     showToast("studentsToast", response.message)
-                } 
+                } else {
+                    alertController({
+                        idAlert: "addFormAlert",
+                        message: response.message
+                    })
+                }
+            }, error: function(event) {
+                alertController({
+                    idAlert: "addFormAlert",
+                    message: "internalError"
+                })
             }
         })
     })

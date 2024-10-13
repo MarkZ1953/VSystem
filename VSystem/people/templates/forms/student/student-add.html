@@ -1,4 +1,4 @@
-{% extends "components/base-modal.html" %}
+{% extends "components/base-modal-add.html" %}
 
 {% block title %}Agregar Estudiante{% endblock %}
 {% block modal-id %}addForm{% endblock %}
@@ -9,6 +9,7 @@
 {% block id-form %}studentAddForm{% endblock %}
 
 {% block modal-body %}
+    <div id="addFormAlert"></div>
     <div class="row g-3 mb-3">
         <div class="col-md-4">  
             <label for="inputDocument" class="form-label">Documento</label>

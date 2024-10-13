@@ -1,25 +1,27 @@
-import { showToast } from "../toast.js"
+import { showToast } from "../../toast.js"
+import { updateStudentTable } from "../components/student-table.js"
 
 
 document.addEventListener("DOMContentLoaded", function() {
     let studentId;
     const btnDeleteAccept = document.getElementById("btnDeleteAccept")
-    
-    
-    document.querySelectorAll(".btnDelete").forEach(button => {
-        button.addEventListener("click", function(event) {
+
+    document.getElementById("students-table").addEventListener("click", function(event) {
+        const btnDelete = event.target.closest(".btnDelete");
+
+        if (btnDelete) {
             event.preventDefault();
-            studentId = event.target.getAttribute("data-id");
+            studentId = btnDelete.getAttribute("data-id");
             const studentText = document.getElementById("student-text")
             
             $.ajax({
-                url: `get-student/${studentId}/`,
+                url: `detail-student/${studentId}/`,
                 method: "GET",
                 success: function(response) {
                     studentText.innerText = `Esta seguro/a que desea eliminar a el/la estudiante ${response.student.fields.firstName} ${response.student.fields.lastName}`
                 }
             })
-        })
+        }
     })
 
     btnDeleteAccept.addEventListener("click", function(event) {
@@ -34,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     var myModalElement = document.getElementById('deleteForm')
                     var modal = bootstrap.Modal.getInstance(myModalElement)
                     modal.hide()
+                    updateStudentTable()
                     showToast("studentsToast", response.message, "danger")
                 }
             }

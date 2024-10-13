@@ -8,6 +8,7 @@ class Person(models.Model):
     phoneNumber = models.CharField(max_length=16, verbose_name="Phone Number")
     email = models.CharField(max_length=128, verbose_name="Email")
     birthDate = models.DateField(verbose_name="Birth Date")
+    isActive = models.BooleanField(default=True)
     rol = models.CharField(max_length=32, verbose_name="Rol")
 
     def __str__(self) -> str:

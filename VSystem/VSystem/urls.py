@@ -17,14 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from webApp.views import IndexView
-from people.views import StudentsView, DetailStudentView, AddStudentView, DeleteStudentView
+from people.views import StudentsView, DetailStudentView, AddStudentView, DeleteStudentView, ListStudentsView, UpdateStudentView, TeachersView
  
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
     path('students/', StudentsView.as_view(), name='students'),
-    path('students/get-student/<int:pk>/', DetailStudentView.as_view(), name="detail-student"),
+    path('students/get-students/', ListStudentsView.as_view(), name='get-students'),
     path('students/add-student/', AddStudentView.as_view(), name="add-student"),
+    path('students/detail-student/<int:pk>/', DetailStudentView.as_view(), name="detail-student"),
+    path('students/update-student/<int:pk>/', UpdateStudentView.as_view(), name="update-student"),
     path('students/delete-student/<int:pk>/', DeleteStudentView.as_view(), name="delete-student"),
+    path('teachers/', TeachersView.as_view(), name='teachers'),
 ]

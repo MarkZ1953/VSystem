@@ -5,6 +5,7 @@
 {% block form-label-title %}deleteForm{% endblock %}
 
 {% block modal-body %}
+    {% csrf_token %}
     <p class="student-text" id="student-text"></p>
 {% endblock %}
 

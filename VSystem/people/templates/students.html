@@ -5,67 +5,27 @@
 
 {% block content %} 
 
-    {% include "forms/student/student-delete.html" %}
+    <!-- Forms -->
+    {% include "forms/student/student-delete.html" %}   
     {% include "forms/student/student-detail.html" %}
     {% include "forms/student/student-add.html" %}
-
-    <div class="position-fixed bottom-0 start-0 m-3" style="z-index: 11">
-        <div id="studentsToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
-                </svg>  
-                <strong class="me-auto mx-1">Estudiantes</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                
-            </div>
-        </div>
-    </div>
-
-    <div class="container border main-container">
-        <div class="d-flex align-items-center justify-content-between mb-3 mt-3 py-4 bg-dark">
-            <h1 class="text-white mx-5">Estudiantes</h1>
-            <a class="btn btn-light mx-5"  data-bs-toggle="modal" data-bs-target="#addForm">Agregar</a>
-        </div>
-        <div class="container overflow-auto border table-container table-responsive">
-            <table class="table table-bordered mt-3 table-sm">
-                <thead>
-                    <th class="align-middle text-center">#</th>
-                    <th class="align-middle text-center">Nombres</th>
-                    <th class="align-middle text-center">Apellidos</th>
-                    <th class="align-middle text-center">Documento</th>
-                    <th class="align-middle text-center">Telefono</th>
-                    <th class="align-middle text-center">Correo Electronico</th>
-                    <th class="align-middle text-center">Edad</th>
-                    <th class="align-middle text-center">Opciones</th>
-                </thead>
-                <tbody>
-                    {% for student in students %}
-                        <tr>
-                            <td class="align-middle text-center">{{forloop.counter}}</td>
-                            <td class="align-middle text-center">{{student.firstName}}</td>
-                            <td class="align-middle text-center">{{student.lastName}}</td>
-                            <td class="align-middle text-center">{{student.document}}</td>
-                            <td class="align-middle text-center">{{student.phoneNumber}}</td>
-                            <td class="align-middle text-center">{{student.email}}</td> 
-                            <td class="align-middle text-center">{{student.birthDate}}</td>
-                            <td class="align-middle text-center">
-                                <a href="" class="btn btn-primary py-1 mb-1 mt-1 btnDetail" data-bs-toggle="modal" data-bs-target="#detailForm" id="btnDetail" data-id="{{student.id}}">Detalle</a>
-                                <a href="" class="btn btn-danger py-1 btnDelete" data-bs-toggle="modal" data-bs-target="#deleteForm" id="btnDelete" data-id="{{student.id}}">Eliminar</a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <script src="{% static "js/student/student-detail.js" %}" type="module"></script>
-    <script src="{% static "js/student/student-add.js" %}" type="module"></script>
-    <script src="{% static "js/student/student-delete.js" %}" type="module"></script>
-    <script src="{% static "js/student/student-update.js" %}" type="module"></script>
+    {% include "forms/student/student-update.html" %}
     
+    <!-- Toast -->
+    {% include "components/student/student-toast.html" %}
+    
+    <!-- Title Page -->
+    {% include "components/student/student-title-page.html" %}
+    
+    <!-- Students Table -->
+    {% include "components/student/student-table.html" %}
+    
+    <!-- JS -->
+    <script src="{% static "js/student/forms/student-detail.js" %}" type="module"></script>
+    <script src="{% static "js/student/forms/student-add.js" %}" type="module"></script>
+    <script src="{% static "js/student/forms/student-delete.js" %}" type="module"></script>
+    <script src="{% static "js/student/forms/student-update.js" %}" type="module"></script>
+    <script src="{% static "js/student/students.js" %}" type="module"></script>
+    <script src="{% static "js/student/components/student-table.js" %}" type="module"></script>
+
 {% endblock %}
