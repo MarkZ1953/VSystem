@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("students-table").addEventListener("click", function(event) {
+    document.getElementById("studentsTable").addEventListener("click", function(event) {
         
         // Busca el botón de detalle más cercano
         const detailButton = event.target.closest(".btnDetail");

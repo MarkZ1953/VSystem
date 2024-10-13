@@ -1,7 +1,6 @@
 export function updateStudentTable() {
     let content = ``;
     let row = 1
-    var type;
 
     $.ajax({
         url: "get-students/",
@@ -28,7 +27,7 @@ export function updateStudentTable() {
                     row += 1
                 }
             })
-            document.getElementById("students-table-body").innerHTML = content
+            document.getElementById("studentsTableBody").innerHTML = content
         }
     })
 }

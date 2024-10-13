@@ -1,6 +1,6 @@
 import { showToast } from "../../toast.js"
 import { alertController } from "../../alert.js"
-import { updateStudentTable } from "../components/student-table.js"
+import { updateStudentTable } from "../../components/student/student-table.js"
 
 
 document.addEventListener("DOMContentLoaded", function() {

@@ -1,12 +1,12 @@
 import { showToast } from "../../toast.js"
 import { alertController } from "../../alert.js"
-import { updateStudentTable } from "../components/student-table.js"
+import { updateStudentTable } from "../../components/student/student-table.js"
 
 
 const studentUpdateForm = document.getElementById("studentUpdateForm")
 let studentId;
 
-document.getElementById("students-table").addEventListener("click", function(event) {
+document.getElementById("studentsTable").addEventListener("click", function(event) {
     const btnUpdate = event.target.closest(".btnUpdate");
 
     if (btnUpdate) {

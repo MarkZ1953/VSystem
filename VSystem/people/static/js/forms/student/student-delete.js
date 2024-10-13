@@ -1,12 +1,12 @@
 import { showToast } from "../../toast.js"
-import { updateStudentTable } from "../components/student-table.js"
+import { updateStudentTable } from "../../components/student/student-table.js"
 
 
 document.addEventListener("DOMContentLoaded", function() {
     let studentId;
     const btnDeleteAccept = document.getElementById("btnDeleteAccept")
 
-    document.getElementById("students-table").addEventListener("click", function(event) {
+    document.getElementById("studentsTable").addEventListener("click", function(event) {
         const btnDelete = event.target.closest(".btnDelete");
 
         if (btnDelete) {

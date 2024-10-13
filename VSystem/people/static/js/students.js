@@ -1,4 +1,4 @@
-import { updateStudentTable } from "./student/components/student-table.js";
+import { updateStudentTable } from "./components/student/student-table.js";
 
 document.addEventListener("DOMContentLoaded", function() {
     updateStudentTable()
