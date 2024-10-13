@@ -6,7 +6,7 @@ export function updateTeacherTable() {
         url: "get-teachers/",
         type: "GET",   
         success: function(response) {
-            response.students.forEach(teacher =>  {
+            response.teachers.forEach(teacher =>  {
                 if (teacher.fields.isActive) {
                     content += `
                         <tr>

@@ -1,0 +1,41 @@
+{% extends "components/base-modal.html" %}
+
+{% block title %}Detalle Estudiante{% endblock %}
+{% block modal-id %}detailForm{% endblock %}
+{% block form-label-title %}detailForm{% endblock %}
+{% block modal-size %}modal-lg{% endblock %}
+
+{% block modal-body %}
+    <div class="row g-3 mb-3">
+        <div class="col-md-4">
+            <label for="inputDocument" class="form-label">Documento</label>
+            {{teacherDetailForm.document}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputFirstName" class="form-label">Nombres</label>
+            {{teacherDetailForm.firstName}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputLastName" class="form-label">Apellidos</label>
+            {{teacherDetailForm.lastName}}
+        </div>
+    </div>
+    <div class="row g-3 mb-3">
+        <div class="col-md-4">
+            <label for="inputPhoneNumber" class="form-label">Telefono</label>
+            {{teacherDetailForm.phoneNumber}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputEmail" class="form-label">Correo Electronico</label>
+            {{teacherDetailForm.email}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputBirthDate" class="form-label">Fecha de Nacimiento</label>
+            {{teacherDetailForm.birthDate}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal-buttons %}
+    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+{% endblock %}

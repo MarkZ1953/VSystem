@@ -1,0 +1,48 @@
+{% extends "components/base-modal-add.html" %}
+
+{% block title %}Agregar Docente{% endblock %}
+{% block modal-id %}addForm{% endblock %}
+{% block form-label-title %}addForm{% endblock %}
+{% block modal-size %}modal-lg{% endblock %}
+
+{% block url-form %}{% url "add-student" %}{% endblock %}
+{% block id-form %}teacherAddForm{% endblock %}
+
+{% block modal-body %}
+    <div id="addFormAlert"></div>
+    <div class="row g-3 mb-3">
+        <div class="col-md-4">  
+            <label for="inputDocument" class="form-label">Documento</label>
+            {{teacherAddForm.document}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputFirstName" class="form-label">Nombres</label>
+            {{teacherAddForm.firstName}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputLastName" class="form-label">Apellidos</label>
+            {{teacherAddForm.lastName}}
+        </div>
+    </div>
+    <div class="row g-3 mb-3">
+        <div class="col-md-4">
+            <label for="inputPhoneNumber" class="form-label">Telefono</label>
+            {{teacherAddForm.phoneNumber}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputEmail" class="form-label">Correo Electronico</label>
+            {{teacherAddForm.email}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputBirthDate" class="form-label">Fecha de Nacimiento</label>
+            {{teacherAddForm.birthDate}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal-buttons %}
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+{% endblock %}
+
+

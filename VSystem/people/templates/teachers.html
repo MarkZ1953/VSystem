@@ -6,13 +6,13 @@
 {% block content %} 
 
     <!-- Forms -->
-    {% comment %} {% include "forms/student/student-delete.html" %}    {% endcomment %}
-    {% comment %} {% include "forms/student/student-detail.html" %} {% endcomment %}
-    {% comment %} {% include "forms/student/student-add.html" %} {% endcomment %}
-    {% comment %} {% include "forms/student/student-update.html" %} {% endcomment %}
+    {% include "forms/teacher/teacher-add.html" %}
+    {% include "forms/teacher/teacher-detail.html" %}
+    {% include "forms/teacher/teacher-delete.html" %}   
+    {% include "forms/teacher/teacher-update.html" %}
     
     <!-- Toast -->
-    {% comment %} {% include "components/student/student-toast.html" %} {% endcomment %}
+    {% include "components/teacher/teacher-toast.html" %}
     
     <!-- Title Page -->
     {% include "components/teacher/teacher-title-page.html" %}
@@ -21,11 +21,11 @@
     {% include "components/teacher/teacher-table.html" %}
     
     <!-- JS -->
-    {% comment %} <script src="{% static "js/student/components/student-table.js" %}" type="module"></script>
-    <script src="{% static "js/student/students.js" %}" type="module"></script>
-    <script src="{% static "js/student/student-detail.js" %}" type="module"></script>
-    <script src="{% static "js/student/student-add.js" %}" type="module"></script>
-    <script src="{% static "js/student/student-delete.js" %}" type="module"></script>
-    <script src="{% static "js/student/student-update.js" %}" type="module"></script> {% endcomment %}
+    <script src="{% static "js/teachers.js" %}" type="module"></script>
+    <script src="{% static "js/components/teacher/teacher-table.js" %}" type="module"></script>
+    <script src="{% static "js/forms/teacher/teacher-add.js" %}" type="module"></script>
+    <script src="{% static "js/forms/teacher/teacher-detail.js" %}" type="module"></script>
+    <script src="{% static "js/forms/teacher/teacher-update.js" %}" type="module"></script>
+    <script src="{% static "js/forms/teacher/teacher-delete.js" %}" type="module"></script>
 
 {% endblock %}
