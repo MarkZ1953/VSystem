@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Profesores | VSystem{% endblock %}
+
+{% block content %} 
+
+    <!-- Forms -->
+    {% comment %} {% include "forms/student/student-delete.html" %}    {% endcomment %}
+    {% comment %} {% include "forms/student/student-detail.html" %} {% endcomment %}
+    {% comment %} {% include "forms/student/student-add.html" %} {% endcomment %}
+    {% comment %} {% include "forms/student/student-update.html" %} {% endcomment %}
+    
+    <!-- Toast -->
+    {% comment %} {% include "components/student/student-toast.html" %} {% endcomment %}
+    
+    <!-- Title Page -->
+    {% include "components/teacher/teacher-title-page.html" %}
+    
+    <!-- Students Table -->
+    {% include "components/teacher/teacher-table.html" %}
+    
+    <!-- JS -->
+    {% comment %} <script src="{% static "js/student/components/student-table.js" %}" type="module"></script>
+    <script src="{% static "js/student/students.js" %}" type="module"></script>
+    <script src="{% static "js/student/student-detail.js" %}" type="module"></script>
+    <script src="{% static "js/student/student-add.js" %}" type="module"></script>
+    <script src="{% static "js/student/student-delete.js" %}" type="module"></script>
+    <script src="{% static "js/student/student-update.js" %}" type="module"></script> {% endcomment %}
+
+{% endblock %}
