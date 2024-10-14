@@ -8,6 +8,7 @@ class Course(models.Model):
     name = models.CharField(max_length=64, verbose_name="Name")
     maxCapacity = models.IntegerField(verbose_name="Max Capacity")
     teacher = models.ForeignKey(Person, on_delete=models.SET_NULL, null=True, db_column="teacherId")
+    isActive = models.BooleanField(default=True, verbose_name="Is Active")
 
     def __str__(self) -> str:
         return self.name
@@ -28,6 +29,7 @@ class Course_Student(models.Model):
     startDate = models.DateField(null=True)
     endDate = models.DateField(null=True)
     state = models.IntegerField(choices=STATUS_CHOICES, default=0)
+    isActive = models.BooleanField(default=True, verbose_name="Is Active")
 
     def __str__(self) -> str:
         return f"{self.course} | {self.student}"

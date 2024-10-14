@@ -1,0 +1,15 @@
+{% extends "components/base-modal.html" %}
+
+{% block title %}Eliminar Curso{% endblock %}
+{% block modal-id %}deleteForm{% endblock %}
+{% block form-label-title %}deleteForm{% endblock %}
+
+{% block modal-body %}
+    {% csrf_token %}
+    <p id="courseText"></p>
+{% endblock %}
+
+{% block modal-buttons %}
+    <a class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+    <a class="btn btn-danger" data-bs-dismiss="modal" id="btnDeleteAccept">Eliminar</a>
+{% endblock %}

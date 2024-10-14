@@ -1,0 +1,34 @@
+{% extends "components/base-modal-add.html" %}
+
+{% block title %}Agregar Curso{% endblock %}
+{% block modal-id %}addForm{% endblock %}
+{% block form-label-title %}addForm{% endblock %}
+{% block modal-size %}modal-lg{% endblock %}
+
+{% block url-form %}{% url "add-course" %}{% endblock %}
+{% block id-form %}courseAddForm{% endblock %}
+
+{% block modal-body %}
+    <div id="addFormAlert"></div>
+    <div class="row g-3 mb-3">
+        <div class="col-md-4">  
+            <label for="inputNameAdd" class="form-label">Nombre</label>
+            {{courseAddForm.name}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputMaxCapacityAdd" class="form-label">Capacidad Maxima</label>
+            {{courseAddForm.maxCapacity}}
+        </div>
+        <div class="col-md-4">
+            <label for="selectTeacherAdd" class="form-label">Docente</label>
+            {{courseAddForm.teacher}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal-buttons %}
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+{% endblock %}
+
+

@@ -1,0 +1,27 @@
+{% extends "components/base-modal.html" %}
+
+{% block title %}Detalle Curso{% endblock %}
+{% block modal-id %}detailForm{% endblock %}
+{% block form-label-title %}detailForm{% endblock %}
+{% block modal-size %}modal-lg{% endblock %}
+
+{% block modal-body %}
+    <div class="row g-3 mb-3">
+        <div class="col-md-4">
+            <label for="inputDocument" class="form-label">Nombre</label>
+            {{courseDetailForm.name}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputFirstName" class="form-label">Capacidad Maxima</label>
+            {{courseDetailForm.maxCapacity}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputLastName" class="form-label">Docente</label>
+            {{courseDetailForm.teacher}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal-buttons %}
+    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Cursos | VSystem{% endblock %}
+
+{% block content %} 
+
+    <!-- Forms -->
+    {% include "forms/course/course-add.html" %}   
+    {% include "forms/course/course-detail.html" %}
+    {% include "forms/course/course-delete.html" %}
+    {% include "forms/course/course-update.html" %}
+    
+    <!-- Toast -->
+    {% include "components/course/course-toast.html" %}
+    
+    <!-- Title Page -->
+    {% include "components/course/course-title-page.html" %}
+    
+    <!-- Students Table -->
+    {% include "components/course/course-table.html" %}
+    
+    <!-- JS -->
+    <script src="{% static "js/courses.js" %}" type="module"></script>
+    <script src="{% static "js/components/course/course-table.js" %}" type="module"></script>
+    <script src="{% static "js/forms/course/course-add.js" %}" type="module"></script>
+    <script src="{% static "js/forms/course/course-detail.js" %}" type="module"></script>
+    <script src="{% static "js/forms/course/course-update.js" %}" type="module"></script>
+    <script src="{% static "js/forms/course/course-delete.js" %}" type="module"></script>
+    <script src="{% static "js/components/course/select-teacher-update.js" %}" type="module"></script>
+
+{% endblock %}
