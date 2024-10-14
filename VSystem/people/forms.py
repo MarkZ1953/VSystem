@@ -75,7 +75,6 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "32",
-            "name": "inputFirstNameAdd",
             "id": "inputFirstNameAdd"
         }
     ))
@@ -84,7 +83,6 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "32",
-            "name": "inputLastNameAdd",
             "id": "inputLastNameAdd"
         }
     ))
@@ -93,7 +91,6 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "16",
-            "name": "inputDocumentAdd",
             "id": "inputDocumentAdd"
         }
     ))
@@ -102,7 +99,6 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "16",
-            "name": "inputPhoneNumberAdd",
             "id": "inputPhoneNumberAdd"
         }
     ))
@@ -111,7 +107,6 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "128",
-            "name": "inputEmailAdd",
             "id": "inputEmailAdd"
         }
     ))
@@ -120,7 +115,6 @@ class StudentAddForm(Form):
         attrs={
             "class": "form-control",
             "type": "date",
-            "name": "inputBirthDateAdd",
             "id": "inputBirthDateAdd"
         }
     ))
@@ -186,7 +180,6 @@ class TeacherDetailForm(Form):
         attrs={
             "class": "form-control",
             "maxlength": "32",
-            "name": "inputFirstNameDetail",
             "id": "inputFirstNameDetail",
             "readonly": True,
             "disabled": True

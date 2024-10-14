@@ -23,7 +23,7 @@ class StudentsView(View):
 
 class ListStudentsView(ListView):
     def get(self, resquest, *args, **kwargs):
-        students = Person.objects.filter(rol="Estudiante")
+        students = Person.objects.filter(rol="Estudiante", isActive=True)
         studentsData = []
 
         for student in students:
@@ -153,7 +153,7 @@ class TeachersView(View):
 
 class ListTeachersView(ListView):
     def get(self, resquest, *args, **kwargs):
-        teachers = Person.objects.filter(rol="Docente")
+        teachers = Person.objects.filter(rol="Docente", isActive=True)
         teachersData = []
 
         for teacher in teachers:
@@ -167,7 +167,6 @@ class ListTeachersView(ListView):
                         "email": teacher.email,
                         "phoneNumber": teacher.phoneNumber,
                         "birthDate": calculateAge(teacher.birthDate),
-                        "isActive": teacher.isActive
                     }
                 }
             )
