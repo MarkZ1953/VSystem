@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Clases | VSystem{% endblock %}
+
+{% block content %} 
+
+    <!-- Forms -->
+    {% include "forms/class/class-add.html" %}
+    {% include "forms/class/class-detail.html" %}
+    {% include "forms/class/class-delete.html" %}
+    {% include "forms/class/class-update.html" %}
+    
+    <!-- Toast -->
+    {% include "components/class/class-toast.html" %}
+    
+    <!-- Title Page -->
+    {% include "components/class/class-title-page.html" %}
+    
+    <!-- Table -->
+    {% include "components/class/class-table.html" %}
+    
+    <!-- JS -->
+    <script src="{% static "js/classes.js" %}" type="module"></script>
+    <script src="{% static "js/components/class/class-table.js" %}" type="module"></script>
+    <script src="{% static "js/forms/class/class-add.js" %}" type="module"></script>
+    <script src="{% static "js/forms/class/class-detail.js" %}" type="module"></script>
+    <script src="{% static "js/forms/class/class-update.js" %}" type="module"></script>
+    <script src="{% static "js/forms/class/class-delete.js" %}" type="module"></script>
+    {% comment %} <script src="{% static "js/components/select-teacher-update.js" %}" type="module"></script> {% endcomment %}
+
+{% endblock %}
