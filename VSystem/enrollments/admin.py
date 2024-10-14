@@ -4,5 +4,5 @@ from .models import Enrollment
 
 @admin.register(Enrollment)
 class EnrollmentAdmin(admin.ModelAdmin):
-    list_display = ("id", "state", "startDate", "cost", "student")
+    list_display = ("id", "state", "startDate", "cost", "studentCourse")
 

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Matriculas | VSystem{% endblock %}
+
+{% block content %} 
+
+    <!-- Forms -->
+    {% include "forms/enrollment-add.html" %}
+    {% include "forms/enrollment-detail.html" %}
+    {% include "forms/enrollment-delete.html" %}
+    {% include "forms/enrollment-update.html" %}
+    
+    <!-- Toast -->
+    {% include "components/enrollment-toast.html" %}
+    
+    <!-- Title Page -->
+    {% include "components/enrollment-title-page.html" %}
+    
+    <!-- Table -->
+    {% include "components/enrollment-table.html" %}
+    
+    <!-- JS -->
+    <script src="{% static "js/enrollments.js" %}" type="module"></script>
+    <script src="{% static "js/components/enrollment-table.js" %}" type="module"></script>
+    <script src="{% static "js/forms/enrollment-add.js" %}" type="module"></script>
+    <script src="{% static "js/forms/enrollment-detail.js" %}" type="module"></script>
+    <script src="{% static "js/forms/enrollment-update.js" %}" type="module"></script>
+    <script src="{% static "js/forms/enrollment-delete.js" %}" type="module"></script>
+
+{% endblock %}

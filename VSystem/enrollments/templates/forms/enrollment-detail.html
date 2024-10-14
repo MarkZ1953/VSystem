@@ -1,0 +1,31 @@
+{% extends "components/base-modal.html" %}
+
+{% block title %}Detalle Matricula{% endblock %}
+{% block modal-id %}detailForm{% endblock %}
+{% block form-label-title %}detailForm{% endblock %}
+{% block modal-size %}modal-lg{% endblock %}
+
+{% block modal-body %}
+    <div class="row g-3 mb-3">
+        <div class="col-md-12">
+            <label for="selectTeacherAdd" class="form-label">Clase</label>
+            {{enrollmentDetailForm.studentCourse}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputMaxCapacityAdd" class="form-label">Fecha Inicial</label>
+            {{enrollmentDetailForm.startDate}}
+        </div>
+        <div class="col-md-4">  
+            <label for="inputNameAdd" class="form-label">Costo</label>
+            {{enrollmentDetailForm.cost}}
+        </div>
+        <div class="col-md-4">
+            <label for="selectTeacherAdd" class="form-label">Estado</label>
+            {{enrollmentDetailForm.state}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal-buttons %}
+    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "components/base-modal-add.html" %}
+
+{% block title %}Agregar Matricula{% endblock %}
+{% block modal-id %}addForm{% endblock %}
+{% block form-label-title %}addForm{% endblock %}
+{% block modal-size %}modal-lg{% endblock %}
+
+{% block url-form %}{% url "add-enrollment" %}{% endblock %}
+{% block id-form %}enrollmentAddForm{% endblock %}
+
+{% block modal-body %}
+    {% csrf_token %}
+    <div id="addFormAlert"></div>
+    <div class="row g-3 mb-3">
+        <div class="col-md-12">
+            <label for="selectTeacherAdd" class="form-label">Clase</label>
+            {{enrollmentAddForm.studentCourse}}
+        </div>
+        <div class="col-md-4">
+            <label for="inputMaxCapacityAdd" class="form-label">Fecha Inicial</label>
+            {{enrollmentAddForm.startDate}}
+        </div>
+        <div class="col-md-4">  
+            <label for="inputNameAdd" class="form-label">Costo</label>
+            {{enrollmentAddForm.cost}}
+        </div>
+        <div class="col-md-4">
+            <label for="selectTeacherAdd" class="form-label">Estado</label>
+            {{enrollmentAddForm.state}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal-buttons %}
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+{% endblock %}
+
+
