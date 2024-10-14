@@ -31,16 +31,13 @@
                     <a class="nav-link {% if request.path == '/teachers/' %}active{% endif %}" href="{% url "teachers" %}">Docentes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/teachers/' %}active{% endif %}" href="{% url "teachers" %}">Cursos</a>
+                    <a class="nav-link {% if request.path == '/courses/' %}active{% endif %}" href="{% url "courses" %}">Cursos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/teachers/' %}active{% endif %}" href="{% url "teachers" %}">Estudiantes por Curso</a>
+                    <a class="nav-link {% if request.path == '/classes/' %}active{% endif %}" href="{% url "classes" %}">Clases</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/teachers/' %}active{% endif %}" href="{% url "teachers" %}">Docentes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link {% if request.path == '/enrollments/' %}active{% endif %}" href="{% url "enrollments" %}">Matriculas</a>
                 </li>
             </ul>
             
